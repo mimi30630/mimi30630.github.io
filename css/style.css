@@ -1,0 +1,457 @@
+/**
+ * Page name
+ * Copyright 2017
+ * Author
+ * Licensed 
+ */
+/*------------------------------------*\
+    Content
+\*------------------------------------*/
+/**
+ * Content............You're reading it!
+ * Globel...............Set common style
+ * Layout...........Set grid
+ * Components...........Set components styles
+ */
+ 
+ 
+/*------------------------------------*\
+    Globel
+\*------------------------------------*/
+/* 此區設定一開始的共用樣式，或調整原生html樣式的預設，請自行調整 */
+*{
+    position: relative;
+    box-sizing: border-box;
+}
+html,body{
+    font-family: '微軟正黑體';
+}
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+/*------------------------------------*\
+    Layout
+\*------------------------------------*/
+/* 此區設定容器的樣式，請自行調整 */
+.container{
+    max-width:1200px;
+    margin: 0 auto;
+    /*border: 1px solid #ccc;*/
+    height: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.row{
+    margin-left: -16px;
+    margin-right: -16px;
+}
+.row:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/*------------------------------------*\
+    Components
+\*------------------------------------*/
+/* 此區設定元件的樣式，請自行調整 */
+/* image-container */
+.image-container{
+    width: 100%;
+    /*border: 1px solid blue;*/
+}
+.image-container:before{
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 75%;
+}
+.image-container .image{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*border:2px solid yellow;*/
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* navbar */
+.navbar{
+    /*height: 64px;*/
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 48px 54px 84px 54px;
+    z-index: 100;
+    transition: all 0.3s;
+}
+.navbar .brand{
+    display: inline-block;
+    width: 160px;
+    height: 64px;
+    background-image: url('../images/logo/logo-lush-500x500.png');
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.navbar.active{
+    height: 60px;
+    background-color: #fff;
+    opacity: 0.8;
+}
+.navbar .nav{
+    float: right;
+}
+.navbar .nav-item{
+    float: left;
+    padding-right: 60px;
+}
+.navbar .nav-link{
+    line-height: 60px;
+    padding: 20px 20px;
+    transition: all 0.2s;
+}
+.navbar .nav-link:hover{
+    line-height: 60px;
+    padding: 20px 20px;
+    /*color: #FBC116;*/
+    font-weight: bold;
+}
+.navbar .nav .nav-link span:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 4px;
+    /*background-color: #03619E;*/
+    background-color: black;
+    z-index: -10;
+}
+.navbar .nav .nav-link span:hover:after {
+    content: '';
+    position: absolute;
+    left: -10%;
+    bottom: -8px;
+    width: 120%;
+    height: 4px;
+    border-radius: 20px;
+    background-color: black;
+    /*background-color: #03619E;*/
+    transition: all 0.2s;
+    z-index: -10;
+}
+/* hero */
+.hero{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.hero.hero-bg-white{
+    background-color: #fefefe;
+}
+.hero.hero-bg-grey{
+    background-color: #efefef;
+}
+
+/* jumbotron */
+.jumbotron {
+   padding-top: 120px;
+}
+.jumbotron .jumbotron-bg{
+    padding-top: 224px;
+    padding-bottom: 160px;
+    background-color: #03619E;
+    background-image: url(../images/process.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* btn */
+.btn{
+    font-size: 20px;
+    line-height: 24px;
+    padding: 8px 80px;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 4px;
+}
+/*按鈕效果 字要加span
+.btn{
+    display: inline-block;
+    line-height: 48px;
+    padding-left: 64px;
+    padding-right: 64px;
+    border-radius: 32px;
+    overflow: hidden;
+}
+.btn:before{
+    content: '';
+    position: absolute;
+    left: -48px;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    background-color: #fff;
+    border-radius: 24px;
+    transition: all 0.3s;
+}
+.btn:hover:before{
+    left: 0;
+    width:100%;
+}
+*/
+.jumbotron .btn{
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%,0);
+    z-index: 100;
+    border: 2px solid #FBC116;
+    color: #FBC116;
+    box-shadow: 4px 4px 1px rgba(0,0,50,0.6);
+    text-shadow: 2px 2px 2px rgba(0,0,50,0.3);
+    transition: all 0.1s;
+    font-weight: bold;
+}
+.jumbotron .btn:hover{
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    margin-left: 4px;
+    margin-top: 4px;
+    transform: translate(-50%,0);
+    z-index: 100;
+    /*background-color: #03304A;*/
+    border: 0px solid #fff;
+    color: #fff;
+    box-shadow: 0px 0px 0px rgba(0,0,50,0.6);
+    text-shadow: 0px 0px 0px rgba(0,0,50,0.6);
+}
+.jumbotron .btn:after{
+    transition: all 0.3s;
+}
+
+/* About */
+/*.about{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}*/
+.about .title{
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 24px;
+    margin-top: 24px;
+}
+.about .para{
+    font-size: 16px;
+    line-height: 32px;
+    color: #333;
+    margin-bottom: 24px;
+}
+/*.about-image .image-container .image{
+    height: 100px;
+}*/
+
+/* Product-value */
+.product-value{
+
+}
+.product-value .product1 .image{
+    background-size: contain;
+}
+.product-value .product2 .image{
+    /*margin-left: 50%;*/
+    background-size: contain;
+    padding-left: 100px;
+}
+.product-value .image-container.product2{
+    position: absolute;
+    right: -100px;
+    top: -40px;
+    width: 240px;
+    margin-bottom: 20px;
+    opacity: 0.6;
+    z-index: -1000;
+}
+.image-container.lemon-drawing{
+    position: absolute;
+    z-index: -1000;
+    margin-left: -100px;
+    top: -200px;
+    width: 400px;
+    height: 400px;
+}
+.product-value .lemon-drawing .image{
+    background-size: contain;
+    width: 50%;
+}
+.product-value .para{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: normal;
+    position: relative;
+    color:#333;
+}
+.product-value .title{
+    font-size: 32px;
+    /*margin-left: -240px;*/
+    position: relative;
+    margin-top: 24px;
+}
+.product-value .p{
+    top: 40px;
+    /*margin-left: -240px;*/
+    font-weight: normal;
+    position: relative;
+    margin-bottom: 24px;
+    margin-top: 24px;
+}
+.product-value .para_color{
+    color:#FBC116;
+}
+
+/* Brand Value */
+.brand-value .image-container{
+    padding-top: 25%;
+    /*border: 1px solid #000;*/
+}
+.brand-value .image-container .image{
+    background-size: contain;
+}
+
+/* Knot-wraps Detail */
+.image-ratio-4-5:before{
+    width: 100%;
+    padding-top: 125%;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.detail .title{
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 24px;
+    margin-top: 24px;
+}
+.detail .para{
+    font-size: 16px;
+    line-height: 32px;
+    color: #333;
+    margin-bottom: 24px;
+}
+/* Shop */
+.shop{
+
+}
+.shop .shop1{
+    margin-left: 25%;
+}
+
+.shop .shop2 .image{
+    background-size: 75%;
+}
+
+.shop_slogan{
+    font-size: 40px;
+    color: #333;
+    margin-bottom: 24px;
+    margin-top: 24px;
+    text-align: center;
+    padding-top: 0px;
+}
+
+.big-word--right{
+    font-size: 160px;
+    font-weight: 700;
+    color:rgba(3,97,158,0.2);
+    position: absolute;
+    top:-160px;
+    right: -240px;
+    user-select: none;
+    white-space: nowrap;
+    z-index: -200;
+}
+.big-word--left{
+    font-size: 160px;
+    font-weight: 700;
+    color:rgba(251,200,0,0.2);
+    position: absolute;
+    top:-160px;
+    left: -240px;
+    user-select: none;
+    white-space: nowrap;
+    z-index: -200;
+}
+
+
+/* footer */
+.footer__description{
+    color: #686C71;
+}
+.footer__item{
+    margin-bottom: 8px;
+}
+.footer__link{
+    color: #686C71;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.rellax{
+    position: absolute;
+}
+@media(max-width: 1024px){
+    .rellax{
+        display: none;
+    }
+}
+.parallax-1{
+    width: 30%;
+    right: 0;
+    top: -20%;
+}
+.parallax-7{
+    width: 25%;
+    right: 0;
+    bottom: 0;
+}
+
+.shop_slogan .item{
+    z-index: -10;
+    width: 800px;
+    height: 40px;
+    background-color: #FBC116;
+    margin: 0 auto;
+    margin-top: -20px;
+
+}
+
+.wrapper{
+    overflow: hidden;
+}
